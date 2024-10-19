@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>result</title>
+</head>
+<!--<body>-->
+<body style="background-image: url('{%static 'bg1.jfif'%}'); background-size:cover;background-repeat:no-repeat;background">
+<h1><B><I>RESULT</I></B></h1>
+<p>you have visited our page and <i>submitted </i> your login form</p>
+<p><i>Thank you</i></p>
+<div>
+    <table border="1px">
+        <thead>
+        <tr>
+            <th>s.no</th>
+            <th>username</th>
+            <th>password</th>
+             <th>update</th>
+            <th>delete</th>
+        </tr>
+        </thead>
+        {% for x in obj2 %}
+        <tbody>
+        <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{x.Username}}</td>
+        <td>{{x.Password}}</td>
+        <td> <a href="update/{{x.id}}">update</a> </td>
+        <td><a href="delete/{{x.id}}">delete</a></td>
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+
+</body>
+</html>

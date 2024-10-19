@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+  <style>
+    .imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+  </style>
+
+</head>
+<body style="background-image: url('{%static 'bg1.jfif'%}'); background-size:cover;background-repeat:no-repeat;background">
+<h1>This is our home page</h1>
+<div class="imgcontainer">
+<img src="{%static 'pf.jfif' %}" class="center" style="width:128px;height:128px;">
+  <h2> Login Form</h2>
+  </div>
+<form action="result" method="post">
+  {% csrf_token %}
+  <div style="position:absolute; right0; margin:50px; bottom: 40%;
+  left:50%;
+  transform:translateX(-50%);
+  text-align: center;">
+  <label for="username" id="username">enter your username</label>
+    <input type="text" name="username" placeholder="your username"><br><br>
+    <label for="password" id="password">enter your password</label>
+    <input type="password" name="password" placeholder="password"><br><br>
+    <button type="submit">SUBMIT</button>
+  </div>
+  </form>
+
+</body>
+</html>
